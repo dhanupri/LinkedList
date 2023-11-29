@@ -39,6 +39,18 @@ public class LinkedList {
 
 
     }
+    public static void insert_between(Node head,int value){
+        Node temp=head;
+        Node newnode=new Node(value);
+
+       if(temp.next.data==56 && temp.next.next.data==70){
+
+            temp= temp.next;
+
+        }
+        newnode.next=temp.next;
+        temp.next=newnode;
+    }
     public static void display(Node head){
         Node temp=head.next;
 
@@ -59,12 +71,17 @@ public class LinkedList {
         LinkedList linkedList=new LinkedList();
 
 
-        linkedList.append(head,56);
-        linkedList.append(head,30);
-        linkedList.append(head,70);
+        linkedList.insert(head,56);
+
+        linkedList.insert(head,70);
+
+
+
+        linkedList.insert_between(head,30);
 
 
         linkedList.display(head);
+
 
 
     }
