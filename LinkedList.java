@@ -112,6 +112,18 @@ public class LinkedList {
 
 
     }
+    public static void size(Node head){
+        Node temp=head.next;
+
+        int count=0;
+
+        while (temp!=null){
+            count++;
+            temp=temp.next;
+        }
+        System.out.println("the size of Linked_list is "+count);
+
+    }
     public static void display(Node head){
         Node temp=head.next;
 
@@ -151,6 +163,7 @@ public class LinkedList {
 
 
         linkedList.delete_val(head,40);
+        linkedList.size(head);
 
         linkedList.display(head);
 
@@ -161,4 +174,3 @@ public class LinkedList {
     }
 
 }
-
