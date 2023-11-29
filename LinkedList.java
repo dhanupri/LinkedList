@@ -41,9 +41,9 @@ public class LinkedList {
         LinkedList linkedList=new LinkedList();
 
 
-        linkedList.insert(head,56);
-        linkedList.insert(head,30);
         linkedList.insert(head,70);
+        linkedList.insert(head,30);
+        linkedList.insert(head,56);
 
 
         linkedList.display(head);
@@ -52,4 +52,3 @@ public class LinkedList {
     }
 
 }
-
