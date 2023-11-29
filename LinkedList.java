@@ -21,6 +21,24 @@ public class LinkedList {
        temp.next=newnode;
 
     }
+
+    public static  void append(Node head,int value){
+        Node newnode=new Node(value);
+
+        if(head==null){
+            head=newnode;
+            return;
+        }
+
+        Node last=head;
+        while(last.next!=null){
+            last=last.next;
+        }
+        last.next=newnode;
+
+
+
+    }
     public static void display(Node head){
         Node temp=head.next;
 
@@ -41,9 +59,9 @@ public class LinkedList {
         LinkedList linkedList=new LinkedList();
 
 
-        linkedList.insert(head,70);
-        linkedList.insert(head,30);
-        linkedList.insert(head,56);
+        linkedList.append(head,56);
+        linkedList.append(head,30);
+        linkedList.append(head,70);
 
 
         linkedList.display(head);
