@@ -96,7 +96,19 @@ public class LinkedList {
 
         newnode.next=temp.next;
         temp.next=newnode;
-        
+
+
+
+    }
+    public static void delete_val(Node head,int value){
+        Node temp=head;
+
+        while (temp.next.data!=value){
+            temp=temp.next;
+        }
+
+        temp.next=temp.next.next;
+
 
 
     }
@@ -137,6 +149,9 @@ public class LinkedList {
 
         linkedList.insert_after(val,40);
 
+
+        linkedList.delete_val(head,40);
+
         linkedList.display(head);
 
 
@@ -146,3 +161,4 @@ public class LinkedList {
     }
 
 }
+
