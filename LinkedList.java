@@ -43,13 +43,20 @@ public class LinkedList {
         Node temp=head;
         Node newnode=new Node(value);
 
-       if(temp.next.data==56 && temp.next.next.data==70){
+        if(temp.next.data==56 && temp.next.next.data==70){
 
             temp= temp.next;
 
         }
         newnode.next=temp.next;
         temp.next=newnode;
+    }
+
+    public static void pop(Node head){
+
+        Node temp=head;
+        head.next=temp.next.next;
+
     }
     public static void display(Node head){
         Node temp=head.next;
@@ -78,6 +85,7 @@ public class LinkedList {
 
 
         linkedList.insert_between(head,30);
+        linkedList.pop(head);
 
 
         linkedList.display(head);
