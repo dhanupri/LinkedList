@@ -52,11 +52,23 @@ public class LinkedList {
         temp.next=newnode;
     }
 
-    public static void pop(Node head){
+    public static void pop_first(Node head){
 
         Node temp=head;
-        head.next=temp.next.next;
+        if(temp.next.next!=null) {
+            head.next = temp.next.next;
+        }
 
+    }
+
+    public static void pop_last(Node head){
+        Node temp=head;
+
+       while (temp.next.next!=null){
+           temp=temp.next;
+       }
+
+       temp.next=null;
     }
     public static void display(Node head){
         Node temp=head.next;
@@ -82,10 +94,9 @@ public class LinkedList {
 
         linkedList.insert(head,70);
 
-
-
         linkedList.insert_between(head,30);
-        linkedList.pop(head);
+        linkedList.pop_first(head);
+        linkedList.pop_last(head);
 
 
         linkedList.display(head);
