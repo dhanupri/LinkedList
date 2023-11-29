@@ -70,6 +70,26 @@ public class LinkedList {
 
        temp.next=null;
     }
+
+    public static void search(Node head,int value){
+
+        Node temp=head;
+
+        while (temp.next!=null){
+            if(temp.data==value){
+                System.out.println(value+"present in the linked_list");
+            }
+            temp=temp.next;
+        }
+        if(temp.data==value){
+            System.out.println(value+" present in the linked_list");
+
+        }
+
+
+
+
+    }
     public static void display(Node head){
         Node temp=head.next;
 
@@ -100,6 +120,8 @@ public class LinkedList {
 
 
         linkedList.display(head);
+
+        linkedList.search(head,30);
 
 
 
