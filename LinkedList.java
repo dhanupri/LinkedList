@@ -43,7 +43,7 @@ public class LinkedList {
         Node temp=head;
         Node newnode=new Node(value);
 
-        if(temp.next.data==56 && temp.next.next.data==70){
+        while (temp.next.data==56 && temp.next.next.data==70){
 
             temp= temp.next;
 
@@ -124,6 +124,26 @@ public class LinkedList {
         System.out.println("the size of Linked_list is "+count);
 
     }
+    public static void sortedLinkedList(Node head,int value){
+
+        Node temp=head;
+        Node newnode=new Node(value);
+        if(head.next==null){
+            head.next=newnode;
+            return;
+        }
+
+
+        while (temp.next!=null && temp.next.data<value){
+
+            temp= temp.next;
+
+        }
+        newnode.next=temp.next;
+        temp.next=newnode;
+
+
+    }
     public static void display(Node head){
         Node temp=head.next;
 
@@ -143,27 +163,13 @@ public class LinkedList {
         Node head=new Node();
         LinkedList linkedList=new LinkedList();
 
-
-        linkedList.insert(head,56);
-
-        linkedList.insert(head,70);
-
-
-
-        linkedList.insert_between(head,30);
-//        linkedList.pop_first(head);
-//        linkedList.pop_last(head);
+        linkedList.sortedLinkedList(head,56);
+        linkedList.sortedLinkedList(head,30);
+        linkedList.sortedLinkedList(head,40);
+        linkedList.sortedLinkedList(head,70);
 
 
 
-
-        Node val=linkedList.search(head,30);
-
-        linkedList.insert_after(val,40);
-
-
-        linkedList.delete_val(head,40);
-        linkedList.size(head);
 
         linkedList.display(head);
 
@@ -174,3 +180,6 @@ public class LinkedList {
     }
 
 }
+
+
+
