@@ -71,33 +71,43 @@ public class LinkedList {
        temp.next=null;
     }
 
-    public static void search(Node head,int value){
+    public static Node search(Node head,int value){
 
-        Node temp=head;
+        Node temp=head.next;
 
-        while (temp.next!=null){
+        while (temp!=null){
             if(temp.data==value){
-                System.out.println(value+"present in the linked_list");
+
+                return temp;
+
             }
             temp=temp.next;
         }
-        if(temp.data==value){
-            System.out.println(value+" present in the linked_list");
 
-        }
+        return null;
 
 
+
+
+    }
+    public static void insert_after(Node val,int value){
+        Node temp=val;
+        Node newnode=new Node(value);
+
+        newnode.next=temp.next;
+        temp.next=newnode;
+        
 
 
     }
     public static void display(Node head){
         Node temp=head.next;
 
-        while (temp.next!=null){
+        while (temp!=null){
             System.out.println(temp.data);
             temp=temp.next;
         }
-        System.out.println(temp.data);
+
 
 
 
@@ -114,14 +124,22 @@ public class LinkedList {
 
         linkedList.insert(head,70);
 
-        linkedList.insert_between(head,30);
-        linkedList.pop_first(head);
-        linkedList.pop_last(head);
 
+
+        linkedList.insert_between(head,30);
+//        linkedList.pop_first(head);
+//        linkedList.pop_last(head);
+
+
+
+
+        Node val=linkedList.search(head,30);
+
+        linkedList.insert_after(val,40);
 
         linkedList.display(head);
 
-        linkedList.search(head,30);
+
 
 
 
